@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="j9fiOT" name="GlitchShifter" projectType="audioplug" useAppConfig="0"
+<JUCERPROJECT id="j9fiOT" name="PitchGlitcher" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyName="Mrugalla"
               companyWebsite="https://github.com/Mrugalla" pluginFormats="buildStandalone,buildVST3"
               pluginDesc="XYXYXY" pluginManufacturer="Mrugalla" pluginManufacturerCode="Mrug"
               pluginCode="ID69" pluginVSTNumMidiInputs="1" pluginVST3Category="Fx,Modulation"
-              cppLanguageStandard="latest" pluginName="GlitchShifter" pluginCharacteristicsValue="pluginWantsMidiIn">
-  <MAINGROUP id="c82PPq" name="GlitchShifter">
+              cppLanguageStandard="latest" pluginName="PitchGlitcher" pluginCharacteristicsValue="pluginWantsMidiIn">
+  <MAINGROUP id="c82PPq" name="PitchGlitcher">
     <GROUP id="{329F0704-CF49-5A90-357A-72806BBA6C7A}" name="Source">
       <FILE id="efuGkR" name="cursor.png" compile="0" resource="1" file="Source/cursor.png"/>
       <FILE id="qZlLSW" name="cursorCross.png" compile="0" resource="1" file="Source/cursorCross.png"/>
