@@ -36,8 +36,9 @@ namespace audio
 			if (stg == Stage::Running)
 				return false;
 
-			for (auto ch = 0; ch < numChannels; ++ch)
-				juce::FloatVectorOperations::fill(samples[ch], 0.f, numSamples);
+			if(numSamples != 0)
+				for (auto ch = 0; ch < numChannels; ++ch)
+					SIMD::fill(samples[ch], 0.f, numSamples);
 
 			if (stg == Stage::Suspending)
 			{

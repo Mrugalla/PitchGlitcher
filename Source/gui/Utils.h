@@ -4,6 +4,8 @@
 #include "Events.h"
 #include "../audio/MIDILearn.h"
 
+#include "../config.h"
+
 namespace gui
 {
 	using Notify = evt::Notify;

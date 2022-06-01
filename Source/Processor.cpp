@@ -130,9 +130,12 @@ void audio::ProcessorBackEnd::timerCallback()
 void audio::ProcessorBackEnd::processBlockBypassed(AudioBuffer& buffer, juce::MidiBuffer&)
 {
     macroProcessor();
+    if (sus.suspendIfNeeded(buffer))
+        return;
     const auto numSamples = buffer.getNumSamples();
     if (numSamples == 0)
         return;
+
     auto samples = buffer.getArrayOfWritePointers();
     const auto constSamples = buffer.getArrayOfReadPointers();
     const auto numChannels = buffer.getNumChannels();
@@ -154,7 +157,7 @@ audio::AudioBuffer* audio::ProcessorBackEnd::processBlockStart(AudioBuffer& buff
 
     const auto numSamples = buffer.getNumSamples();
     if (numSamples == 0)
-        return nullptr;
+       return nullptr;
 
     if (params[PID::Power]->getValMod() < .5f)
     {
