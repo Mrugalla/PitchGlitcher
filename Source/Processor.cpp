@@ -22,14 +22,16 @@ audio::ProcessorBackEnd::ProcessorBackEnd() :
     sus(*this),
     state(),
     params(*this, state),
-    macroProcessor(params),
-    midiLearn(params, state),
-#if PPDHasHQ
-    oversampler(),
+    macroProcessor(params)
+#if PPDHasMIDILearn
+    ,midiLearn(params, state)
 #endif
-    meters()
+#if PPDHasHQ
+    ,oversampler()
+#endif
+    ,meters()
 #if PPDHasStereoConfig
-    , midSideEnabled(false)
+    ,midSideEnabled(false)
 #endif
 {
     {
@@ -78,13 +80,17 @@ audio::ProcessorBackEnd::AppProps* audio::ProcessorBackEnd::getProps() noexcept 
 void audio::ProcessorBackEnd::savePatch()
 {
     params.savePatch(props);
+#if PPDHasMIDILearn
     midiLearn.savePatch();
+#endif
 }
 
 void audio::ProcessorBackEnd::loadPatch()
 {
     params.loadPatch(props);
+#if PPDHasMIDILearn
     midiLearn.loadPatch();
+#endif
     forcePrepareToPlay();
 }
 
@@ -140,7 +146,9 @@ void audio::ProcessorBackEnd::processBlockBypassed(AudioBuffer& buffer, juce::Mi
 
 audio::AudioBuffer* audio::ProcessorBackEnd::processBlockStart(AudioBuffer& buffer, juce::MidiBuffer& midi) noexcept
 {
+#if PPDHasMIDILearn
     midiLearn(midi);
+#endif
 
     macroProcessor();
 

@@ -7,7 +7,9 @@
 
 #include "Knob.h"
 #include "Menu.h"
+#if PPDHasMIDILearn
 #include "MIDICCMonitor.h"
+#endif
 #include "LowLevel.h"
 
 #include "../config.h"
@@ -47,8 +49,9 @@ namespace gui
 #if PPDHasPolarity
 			polarity(u, param::toTooltip(PID::Polarity)),
 #endif
-
+#if PPDHasMIDILearn
 			ccMonitor(u, u.getMIDILearn()),
+#endif
 
 			lowLevel(_lowLevel),
 
@@ -98,7 +101,9 @@ namespace gui
 			makeParameterSwitchButton(polarity, PID::Polarity, ButtonSymbol::Polarity);
 			addAndMakeVisible(polarity);
 #endif
+#if PPDHasMIDILearn
 			addAndMakeVisible(ccMonitor);
+#endif
 
 			makeSymbolButton(menuButton, ButtonSymbol::Settings);
 			menuButton.toggleState = 0;
@@ -206,9 +211,9 @@ namespace gui
 			layout.place(stereoConfig, 5.f, 9.f + patchBrowserOffset, 1.f, 1.f, true);
 #endif
 			layout.place(hq, 7.f, 9.f + patchBrowserOffset, 1.f, 1.f, true);
-
+#if PPDHasMIDILearn
 			layout.place(ccMonitor, 1.f, 10.f + patchBrowserOffset, 3.f, 1.f, false);
-
+#endif
 #if PPDHasPatchBrowser
 			patchBrowser.setBounds(lowLevel->getBounds());
 #endif
@@ -247,8 +252,9 @@ namespace gui
 #if PPDHasPolarity
 		Button polarity;
 #endif
-
+#if PPDHasMIDILearn
 		MIDICCMonitor ccMonitor;
+#endif
 
 		LowLevel* lowLevel;
 		std::unique_ptr<Menu> menu;

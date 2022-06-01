@@ -39,11 +39,11 @@ namespace gui
 		const std::vector<Param*>& getAllParams() const noexcept;
 
 		juce::ValueTree getState() const noexcept;
-
+#if PPDHasMIDILearn
 		void assignMIDILearn(PID pID) noexcept;
 		void removeMIDILearn(PID pID) noexcept;
 		const audio::MIDILearn& getMIDILearn() const noexcept;
-
+#endif
 		float getDragSpeed() const noexcept;
 
 		float fontHeight() const noexcept;

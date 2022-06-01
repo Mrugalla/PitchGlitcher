@@ -133,11 +133,15 @@ namespace gui
 				}, 4);
 				pop.setButton([&u = utils, pID = parametr.getPID()]()
 				{
+#if PPDHasMIDILearn
 					u.assignMIDILearn(pID);
+#endif
 				}, 5);
 				pop.setButton([&u = utils, pID = parametr.getPID()]()
 				{
+#if PPDHasMIDILearn
 					u.removeMIDILearn(pID);
+#endif
 				}, 6);
 				pop.setButton([&u = utils, &paramtr = parametr]()
 					{
@@ -200,11 +204,15 @@ namespace gui
 				}, 3);
 				pop.setButton([&u = utils, pID = button.pID]()
 				{
+#if PPDHasMIDILearn
 					u.assignMIDILearn(pID);
+#endif
 				}, 4);
 				pop.setButton([&u = utils, pID = button.pID]()
 				{
+#if PPDHasMIDILearn
 					u.removeMIDILearn(pID);
+#endif
 				}, 5);
 				pop.setButton([&u = utils, &btn = button]()
 					{

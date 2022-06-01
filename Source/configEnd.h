@@ -22,3 +22,4 @@
 #undef PPDHasPolarity
 #undef PPDEditorWidth
 #undef PPDEditorHeight
+#undef PPDHasMIDILearn

@@ -84,7 +84,9 @@ namespace audio
         State state;
         Params params;
         MacroProcessor macroProcessor;
+#if PPDHasMIDILearn
         MIDILearn midiLearn;
+#endif
 
         DryWetMix dryWetMix;
 #if PPDHasHQ

@@ -30,19 +30,22 @@ namespace gui
 	{
 		return audioProcessor.state.getState();
 	}
-
+#if PPDHasMIDILearn
 	void Utils::assignMIDILearn(PID pID) noexcept
 	{
 		audioProcessor.midiLearn.assignParam(params[pID]);
 	}
+
 	void Utils::removeMIDILearn(PID pID) noexcept
 	{
 		audioProcessor.midiLearn.removeParam(params[pID]);
 	}
+
 	const audio::MIDILearn& Utils::getMIDILearn() const noexcept
 	{
 		return audioProcessor.midiLearn;
 	}
+#endif
 
 	void Utils::resized()
 	{
