@@ -3,7 +3,7 @@
 #include "EnvelopeFollower.h"
 #include <array>
 
-#include "config.h"
+#include "../config.h"
 
 namespace audio
 {
@@ -186,4 +186,4 @@ namespace audio
 	};
 }
 
-#include "configEnd.h"
+#include "../configEnd.h"
