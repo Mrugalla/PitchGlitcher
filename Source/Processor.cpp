@@ -121,7 +121,7 @@ void audio::ProcessorBackEnd::forcePrepareToPlay()
 void audio::ProcessorBackEnd::timerCallback()
 {
 #if PPDHasHQ
-    const auto ovsrEnabled = params[PID::HQ]->getValue() > .5f;
+    const auto ovsrEnabled = params[PID::HQ]->getValMod() > .5f;
     if (oversampler.isEnabled() != ovsrEnabled)
         forcePrepareToPlay();
 #endif
