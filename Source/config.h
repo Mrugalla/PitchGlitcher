@@ -3,7 +3,7 @@
 #define PPDEditorWidth 774
 #define PPDEditorHeight 448
 
-#define PPDHasEditor false
+#define PPDHasEditor true
 #define PPDHasPatchBrowser false
 
 #define PPDHasGainIn false
@@ -13,7 +13,7 @@
 #define PPDHasPolarity false
 
 #define PPDEqualLoudnessMix true
-#define PPDHasMIDILearn false
+#define PPDHasMIDILearn true
 
 #define PPDFPSKnobs 30
 #define PPDFPSMeters 30.f
