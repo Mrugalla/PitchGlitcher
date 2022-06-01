@@ -7,6 +7,7 @@ How to download PitchGlitcher VST3:
 
 Known issues:
 - on some computers it doesn't run in Studio One (it does on mine, so idk..)
+   > as far as i know enabling "plugin napping" in studio one solves it.
 - saving new default values with the context menu of the parameters doesn't entirely work (yet)
    > most DAWs provide a feature for that too tho!
 
